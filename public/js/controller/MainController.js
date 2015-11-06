@@ -7,4 +7,11 @@ app.controller('MainCtrl', function($scope, $http) {
   }, function errorCallback(response) {
     console.log(response.statusText);
   });
+
+
+
+  $scope.go = function (issue) {
+    $scope.filters = issue;
+    // $scope.query = hash.category;
+  };
 });

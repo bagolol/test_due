@@ -22,7 +22,7 @@
       </br>
       </br>
       </br>
-      <div class="container" ng-controller="MainCtrl">
+      <div class="container" ng-controller="MainCtrl as ctrl">
       <div class="row">
       <div class="col-md-12">
          <div class="input-group"> <span class="input-group-addon">Filter</span>
@@ -39,15 +39,16 @@
                </tr>
             </thead>
             <tbody class="searchable">
-               <tr ng-repeat="issue in issues | filter:query">
+               <tr ng-repeat="issue in issues | filter:filters">
                   <td>{{ issue.id }}</td>
                   <td>{{ issue.description }}</td>
                   <td>{{ issue.category }}</td>
-                  <td>{{ issue.project }}</td>
-                  <td>{{ issue.assignee }}</td>
+                  <td ng-click="go(issue.project)">{{ issue.project }}</td>
+                  <td ng-click="filters.assignee = issue.assignee">{{ issue.assignee }}</td>
                </tr>
             </tbody>
          </table>
+         <a ng-click="filters = ''">clear filter</a>
          <!-- bower_components -->
          <script src="bower_components/jquery/dist/jquery.js"></script>
          <script src="bower_components/angular/angular.js"></script>
