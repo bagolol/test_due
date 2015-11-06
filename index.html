@@ -41,10 +41,10 @@
             <tbody class="searchable">
                <tr ng-repeat="issue in issues | filter:filters">
                   <td>{{ issue.id }}</td>
-                  <td>{{ issue.description }}</td>
-                  <td>{{ issue.category }}</td>
+                  <td >{{ issue.description }}</td>
+                  <td ng-click="go(issue.category)">{{ issue.category }}</td>
                   <td ng-click="go(issue.project)">{{ issue.project }}</td>
-                  <td ng-click="filters.assignee = issue.assignee">{{ issue.assignee }}</td>
+                  <td ng-click="go(issue.assignee)">{{ issue.assignee }}</td>
                </tr>
             </tbody>
          </table>
