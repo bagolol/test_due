@@ -1,49 +1,64 @@
 <!DOCTYPE html>
-
-<html lang="en" ng-app="issuesApp">
-<head>
-  <meta charset="utf-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="" name="description">
-  <meta content="" name="author">
-
-  <title>duedil_test</title>
-</head>
-
-
-<body>
-  <!-- Navigation -->
-
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#"></a>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <meta content="" name="description">
+      <meta content="" name="author">
+      <title>duedil_test</title>
+   </head>
+   <body ng-app="issuesApp">
+      <!-- Navigation -->
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container">
+            <div class="navbar-header">
+               <a class="navbar-brand" href="#"></a>
+            </div>
+         </div>
+      </nav>
+      <!-- Page Content -->
+      </br>
+      </br>
+      </br>
+      </br>
+      <div class="container" ng-controller="MainCtrl">
+      <div class="row">
+      <div class="col-md-12">
+         <div class="input-group"> <span class="input-group-addon">Filter</span>
+            <input id="filter" type="text" class="form-control" placeholder="Type here...">
+         </div>
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                  <th>id</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Project</th>
+                  <th>Assignee</th>
+               </tr>
+            </thead>
+            <tbody class="searchable">
+               <tr ng-repeat="issue in issues">
+                  <td>{{ issue.id }}</td>
+                  <td>{{ issue.description }}</td>
+                  <td>{{ issue.category }}</td>
+                  <td>{{ issue.project }}</td>
+                  <td>{{ issue.assignee }}</td>
+               </tr>
+            </tbody>
+         </table>
+         <!-- bower_components -->
+         <script src="bower_components/jquery/dist/jquery.js"></script>
+         <script src="bower_components/angular/angular.js"></script>
+         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+         <link href="public/css/style.css"
+         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+         <!-- scripts -->
+         <script src="public/js/app.js"></script>
+         <script src="public/js/controller/MainController.js"></script>
+      </div>
       </div>
     </div>
-  </nav><!-- Page Content -->
-
-      <footer>
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <p></p>
-          </div>
-        </div><!-- /.row -->
-      </footer>
-    </div><!-- /.container -->
-
-    <!-- bower_components -->
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- scripts -->
-    <script src="public/js/app.js"></script>
-
-  </div>
-</body>
+   </body>
 </html>
