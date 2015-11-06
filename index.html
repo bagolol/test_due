@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta content="IE=edge" http-equiv="X-UA-Compatible">
-      <meta content="width=device-width, initial-scale=1" name="viewport">
-      <meta content="" name="description">
-      <meta content="" name="author">
-      <title>duedil_test</title>
-   </head>
-   <body ng-app="issuesApp">
-      <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-         <div class="container">
-            <div class="navbar-header">
-               <a class="navbar-brand" href="#"></a>
-            </div>
-         </div>
-      </nav>
-      <!-- Page Content -->
-      </br>
-      </br>
-      </br>
-      </br>
-      <div class="container" ng-controller="MainCtrl as ctrl">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>duedil_test</title>
+  </head>
+  <body ng-app="issuesApp">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"></a>
+        </div>
+      </div>
+    </nav>
+    <!-- Page Content -->
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="container" ng-controller="MainCtrl as ctrl">
       <div class="row">
-      <div class="col-md-12">
-         <div class="input-group"> <span class="input-group-addon">Filter</span>
+        <div class="col-md-12">
+          <div class="input-group"> <span class="input-group-addon">Filter</span>
             <input id="filter" type="text" class="form-control" placeholder="Type here..." ng-model="query">
-         </div>
-         <table class="table table-striped">
+          </div>
+          <table class="table table-striped">
             <thead>
-               <tr>
-                  <th>id</th>
-                  <th>Description</th>
-                  <th>Category</th>
-                  <th>Project</th>
-                  <th>Assignee</th>
-               </tr>
+              <tr>
+                <th>id</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Project</th>
+                <th>Assignee</th>
+              </tr>
             </thead>
             <tbody class="searchable">
-               <tr ng-repeat="issue in issues | filter:filters">
-                  <td>{{ issue.id }}</td>
-                  <td >{{ issue.description }}</td>
-                  <td ng-click="go(issue.category)">{{ issue.category }}</td>
-                  <td ng-click="go(issue.project)">{{ issue.project }}</td>
-                  <td ng-click="go(issue.assignee)">{{ issue.assignee }}</td>
-               </tr>
+              <tr ng-repeat="issue in issues | filter:filters">
+                <td>{{ issue.id }}</td>
+                <td >{{ issue.description }}</td>
+                <td ng-click="go(issue.category)">{{ issue.category }}</td>
+                <td ng-click="go(issue.project)">{{ issue.project }}</td>
+                <td ng-click="go(issue.assignee)">{{ issue.assignee }}</td>
+              </tr>
             </tbody>
-         </table>
-         <a ng-click="filters = ''">clear filter</a>
-         <!-- bower_components -->
-         <script src="bower_components/jquery/dist/jquery.js"></script>
-         <script src="bower_components/angular/angular.js"></script>
-         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-         <link href="public/css/style.css"
-         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-         <!-- scripts -->
-         <script src="public/js/app.js"></script>
-         <script src="public/js/controller/MainController.js"></script>
-      </div>
+          </table>
+          <a ng-click="filters = ''">clear filter</a>
+          <!-- bower_components -->
+          <script src="bower_components/jquery/dist/jquery.js"></script>
+          <script src="bower_components/angular/angular.js"></script>
+          <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+          <link href="public/css/style.css"
+          <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+          <!-- scripts -->
+          <script src="public/js/app.js"></script>
+          <script src="public/js/controller/MainController.js"></script>
+        </div>
       </div>
     </div>
-   </body>
+  </body>
 </html>
