@@ -1,16 +1,14 @@
-app.controller('MainCtrl', function($scope, $http) {
-  $http({
-  method: 'GET',
-  url: '/issues'
-  }).then(function successCallback(response) {
-    $scope.issues = response.data;
-  }, function errorCallback(response) {
-    console.log(response.statusText);
-  });
-
-
-
-  $scope.go = function (issue) {
-    $scope.filters = issue;
-  };
+app.controller('MainCtrl', function($scope, issueFinder) {
+  // $scope.GetAllData = function () {
+    // console.log("called")
+    var myData = issueFinder.serverCall();
+    myData.then(function (result) {
+      $scope.issues = result;
+    });
+  // }
 });
+
+  // $scope.go = function (issue) {
+  //   $scope.filters = issue;
+  // };
+
