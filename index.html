@@ -31,15 +31,15 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>id</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Project</th>
-                <th>Assignee</th>
+                <th><a href="" ng-click="orderByField='id'; reverseSort = !reverseSort">id</a></th>
+                <th><a href="" ng-click="orderByField='description'; reverseSort = !reverseSort">Description</a></th>
+                <th><a href="" ng-click="orderByField='category'; reverseSort = !reverseSort">Category</a></th>
+                <th><a href="" ng-click="orderByField='project'; reverseSort = !reverseSort">Project</a></th>
+                <th><a href="" ng-click="orderByField='assignee'; reverseSort = !reverseSort">Assignee</a></th>
               </tr>
             </thead>
             <tbody class="searchable">
-              <tr ng-repeat="issue in issues | filter:filters">
+              <tr ng-repeat="issue in issues | filter:filters||query | orderBy:orderByField:reverseSort">
                 <td>{{ issue.id }}</td>
                 <td >{{ issue.description }}</td>
                 <td ng-click="go(issue.category)">{{ issue.category }}</td>

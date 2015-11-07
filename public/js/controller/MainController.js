@@ -12,6 +12,5 @@ app.controller('MainCtrl', function($scope, $http) {
 
   $scope.go = function (issue) {
     $scope.filters = issue;
-    // $scope.query = hash.category;
   };
 });
