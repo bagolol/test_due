@@ -2,12 +2,14 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
+var favicon = require('serve-favicon');
 
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.get('/', function (req, res, err) {
     if (err) throw err;
