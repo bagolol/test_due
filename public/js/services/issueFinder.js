@@ -3,6 +3,9 @@ app.factory('issueFinder', function ($http) {
     serverCall: function () {
       return $http.get('/issues').then(function (response) {
         return response.data;
+      },
+      function(error) {
+        return error;
       });
     }
   };
