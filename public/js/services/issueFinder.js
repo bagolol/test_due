@@ -1,12 +1,14 @@
-app.factory('issueFinder', function ($http) {
+app.factory('issueFinder', ['$http', '$q', function($http, $q) {
   return {
-    serverCall: function () {
-      return $http.get('/issues').then(function (response) {
-        return response.data;
-      },
-      function(error) {
-        return error;
+    query: function () {
+      var q = $q.defer();
+      $http.get('/issues').success(function (data) {
+        q.resolve(function() {
+          var issues = data;
+          return issues;
+        });
       });
+      return q.promise;
     }
-  };
-});
+  }
+}]);

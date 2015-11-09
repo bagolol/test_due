@@ -1,4 +1,4 @@
-<div class="container" ng-controller="MainCtrl">
+<div class="container" ng-controller="IssueCtrl">
   <div class="row">
     <div class="col-md-12">
       <div class="input-group"> <span class="input-group-addon">Filter</span>
@@ -16,9 +16,14 @@
         </thead>
         <tbody class="searchable">
           <tr ng-repeat="issue in issues | filter:filters||query | orderBy:orderByField:reverseSort">
-          <issue-info info="issue"></issue-info>
           </tr>
+
         </tbody>
+          <td>{{ issue.id }}</td>
+<td >{{ issue.description }}</td>
+<td ng-click="go(issue.category)">{{ issue.category }}</td>
+<td ng-click="go(issue.project)">{{ issue.project }}</td>
+<td ng-click="go(issue.assignee)">{{ issue.assignee }}</td>
       </table>
       <a ng-click="filters = ''">clear filter</a>
     </div>
