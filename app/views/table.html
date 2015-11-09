@@ -4,6 +4,7 @@
       <div class="input-group"> <span class="input-group-addon">Filter</span>
         <input id="filter" type="text" class="form-control" placeholder="Type here..." ng-model="query">
       </div>
+      <div class="table-responsive">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -15,7 +16,7 @@
           </tr>
         </thead>
         <tbody class="searchable">
-          <tr ng-repeat="issue in issues | filter:filters:true||query | orderBy:orderByField:reverseSort">
+          <tr ng-repeat="issue in issues | filter:filters:true | filter:query | orderBy:orderByField:reverseSort">
             <td>{{ issue.id }}</td>
             <td >{{ issue.description }}</td>
             <td ng-click="sort(issue.category)">{{ issue.category }}</td>
@@ -24,6 +25,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
       <button type="button" class="btn btn-info" ng-click="clearFilters()">Clear filter</button>
       </button>
     </div>
