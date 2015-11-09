@@ -2,11 +2,12 @@ var IssueCtrl = app.controller('IssueCtrl', ['$scope','issueFinder', function ($
   var loadIssues = issueFinder.getIssues();
   loadIssues.then(function(val) {
     $scope.issues = val;
-    console.log($scope.issues);
   });
+   $scope.sort = function (issue) {
+     $scope.filters = issue;
+   };
+   $scope.clearFilters = function () {
+     $scope.filters = {};
+   };
 }]);
-
-  // $scope.go = function (issue) {
-  //   $scope.filters = issue;
-  // };
 

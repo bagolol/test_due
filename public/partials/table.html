@@ -15,16 +15,16 @@
           </tr>
         </thead>
         <tbody class="searchable">
-          <tr ng-repeat="issue in issues | filter:filters||query | orderBy:orderByField:reverseSort">
+          <tr ng-repeat="issue in issues | filter:filters:true||query | orderBy:orderByField:reverseSort">
             <td>{{ issue.id }}</td>
             <td >{{ issue.description }}</td>
-            <td ng-click="go(issue.category)">{{ issue.category }}</td>
-            <td ng-click="go(issue.project)">{{ issue.project }}</td>
-            <td ng-click="go(issue.assignee)">{{ issue.assignee }}</td>
+            <td ng-click="sort(issue.category)">{{ issue.category }}</td>
+            <td ng-click="sort(issue.project)">{{ issue.project }}</td>
+            <td ng-click="sort(issue.assignee)">{{ issue.assignee }}</td>
           </tr>
         </tbody>
       </table>
-      <a ng-click="filters = ''">clear filter</a>
+      <a ng-click="clearFilters()">clear filter</a>
     </div>
   </div>
 </div>
