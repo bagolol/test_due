@@ -2,7 +2,7 @@ var app = angular.module('issuesApp', ['ngRoute']).config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
     when('/issues', {
-      templateUrl: 'public/partials/table.html',
+      templateUrl: 'app/views/table.html',
       controller: 'IssueCtrl',
       resolve: IssueCtrl.resolve
     });
