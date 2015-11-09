@@ -1,14 +1,17 @@
 app.factory('issueFinder', ['$http', '$q', function($http, $q) {
   return {
-    query: function () {
-      var q = $q.defer();
-      $http.get('/issues').success(function (data) {
-        q.resolve(function() {
-          var issues = data;
-          return issues;
-        });
-      });
-      return q.promise;
-    }
+   getIssues: function() {
+     var deferred = $q.defer();
+     $http.get('/issues')
+       .success(function(data) {
+          deferred.resolve(data);
+       }).error(function(msg, code) {
+          deferred.reject(msg);
+          $log.error(msg, code);
+       });
+     return deferred.promise;
+   }
   }
 }]);
+
+

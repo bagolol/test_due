@@ -1,7 +1,8 @@
 var IssueCtrl = app.controller('IssueCtrl', ['$scope','issueFinder', function ($scope,issueFinder) {
-  var loadSettings = issueFinder.query();
-  loadSettings.then(function(val) {
+  var loadIssues = issueFinder.getIssues();
+  loadIssues.then(function(val) {
     $scope.issues = val;
+    console.log($scope.issues);
   });
 }]);
 
