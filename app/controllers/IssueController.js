@@ -8,6 +8,7 @@ var IssueCtrl = app.controller('IssueCtrl', ['$scope','issueFinder', function ($
    };
    $scope.clearFilters = function () {
      $scope.filters = {};
+     $scope.query = "";
    };
 }]);
 
