@@ -9,7 +9,7 @@ var favicon = require('serve-favicon');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
-// app.use(favicon(__dirname + '/app/public/data/favicon.ico'));
+app.use(favicon(__dirname + '/app/public/data/favicon.ico'));
 
 app.get('/', function (req, res, err) {
     if (err) throw err;
