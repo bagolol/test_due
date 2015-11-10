@@ -18,3 +18,7 @@ body {
   border-color: #ccc;
   outline: none !important;
 }
+
+.table {
+  margin-bottom: 7px;
+}
