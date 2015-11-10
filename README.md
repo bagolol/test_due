@@ -40,7 +40,7 @@ Notes
 * I deployed the app on Heroku. Again, not part of the task, but a good refresher.
 
 * The home page is currently empty. I thought it made more sense to display the issues
-  on a /issues page. Also, if I had to further develop this, the homepage would probably only show
+  on a **/issues page**. Also, if I had to further develop this, the homepage would probably only show
   the issues I worked on or need to work on.
   
 
