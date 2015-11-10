@@ -8,7 +8,7 @@ Task
 
 * Currently the main functionalities include: 
   - importing issues from an endpoint
-  - showing issues in a table
+  - showing issues on a table
   - filter issues by clicking on the table element (assignee, category, project)
   - alphabetically sort table (click on header)
   - filter by typing
@@ -18,7 +18,7 @@ How to run
 
 * For local use, clone or fork the repo to your local machine
 * run npm install && bower install
-* start server: node server.js
+* start server: **node server.js**
 * navigate to localhost:3000/#/issues
 
 Technologies used
