@@ -9,7 +9,7 @@ var favicon = require('serve-favicon');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
-app.use(favicon(__dirname + '/public/favicon.ico'));
+// app.use(favicon(__dirname + '/app/public/data/favicon.ico'));
 
 app.get('/', function (req, res, err) {
     if (err) throw err;
@@ -18,7 +18,7 @@ app.get('/', function (req, res, err) {
 
 
 app.get('/issues', function (req, res) {
-  fs.readFile('./issues.json','utf8', function (err, data) {
+  fs.readFile('./app/public/data/issues.json','utf8', function (err, data) {
     if (err) throw err;
     var prices = JSON.parse(data);
     res.send(prices);
@@ -26,7 +26,7 @@ app.get('/issues', function (req, res) {
 });
 
 
-var server = app.listen(3000, function () {
+var server = app.listen(process.env.PORT || 3000, function(){
   var host = server.address().address;
   var port = server.address().port;
 

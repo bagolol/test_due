@@ -11,15 +11,14 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="public/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="app/public/css/style.css" rel="stylesheet" type="text/css" />
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- scripts -->
-    <script src="public/js/app.js"></script>
-    <script src="public/js/controller/MainController.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/IssueController.js"></script>
     <!-- services -->
-    <script src="public/js/services/issueFinder.js"></script>
-    <!-- directives -->
-    <script src="public/js/directives/issueInfo.js"></script>
+    <script src="app/services/IssueFinder.js"></script>
+
     <title>duedil_test</title>
   </head>
   <body ng-app="issuesApp">
@@ -27,11 +26,11 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#">DUEDIL TEST</a>
         </div>
       </div>
     </nav>
     <!-- Page Content -->
-    <div class="partial" ng-view></div>
+    <div ng-view></div>
   </body>
 </html>
