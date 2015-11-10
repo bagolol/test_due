@@ -21,7 +21,7 @@ app.get('/issues', function (req, res) {
   fs.readFile('./app/public/data/issues.json','utf8', function (err, data) {
     if (err) throw err;
     var prices = JSON.parse(data);
-    res.send(prices);
+    res.send(issues);
   });
 });
 
