@@ -17,8 +17,8 @@ How to run
 ----
 
 * For local use, clone or fork the repo to your local machine
-* run 'npm install && bower install'
-* start server: 'node server.js'
+* run `npm install && bower install`
+* start server: `node server.js`
 * navigate to **localhost:3000/#/issues**
 
 Technologies used
